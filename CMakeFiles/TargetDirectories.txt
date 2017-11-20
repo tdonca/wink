@@ -1,0 +1,3 @@
+/home/tudor/devCV/wink/CMakeFiles/edit_cache.dir
+/home/tudor/devCV/wink/CMakeFiles/rebuild_cache.dir
+/home/tudor/devCV/wink/CMakeFiles/wink1.dir
