@@ -2,3 +2,7 @@ Wink
 
 This application uses OpenCV to implement face recognition and eye recognition.
 
+Since this application uses CMake for handling dependencies*, the steps to build and run this:
+	$> cmake .
+	$> make
+Then execute as usual. 
