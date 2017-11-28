@@ -10,10 +10,10 @@
 
 
 
-/* Constructor */
-VideoStreamer::VideoStreamer(){
-
-}
+//~ /* Constructor */
+//~ VideoStreamer::VideoStreamer(): buf{30} {
+	
+//~ }
 
 
 /* startStream */
@@ -31,6 +31,7 @@ void VideoStreamer::startStream(int cameraID, cv::String windowName ){
 	cv::Mat frame;
 	while(1){
 		camera >> frame;
+		buf.push_back(frame.clone());
 		if(frame.empty()){
 			std::cerr << "No frame found." << std::endl;
 			break;
@@ -38,8 +39,34 @@ void VideoStreamer::startStream(int cameraID, cv::String windowName ){
 		
 		//display current frame to window
 		cv::imshow(windowName, frame);
-		//check for key pressed to end stream
-		if(cvWaitKey(5) > 0){
+		
+		char key = cvWaitKey(30);
+		//check for key pressed = 'r' to initiate playback
+		if(key == 114){
+			//playback last second of video
+			std::cout << "Wink playback initiated." << std::endl;
+			playbackBuffer(windowName);
+		}
+		else if(key > 0){
+			break;
+		}
+	}
+	
+}
+
+void VideoStreamer::playbackBuffer(cv::String windowName){
+	//~ cv::namedWindow("Playback", cv::WINDOW_AUTOSIZE);
+	//~ cv::imshow(windowName,  buf[1]);
+	//~ cv::imshow("Playback", buf[25]);
+	//~ cvWaitKey(1000);
+	
+	for(int i = 0; i < buf.size(); i++){
+		if(buf[i].empty()){
+				std::cerr << "No playback frame found." << std::endl;
+				break;
+		}
+		cv::imshow(windowName, buf[i]);
+		if(cvWaitKey(33) > 0){
 			break;
 		}
 	}

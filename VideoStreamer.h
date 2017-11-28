@@ -8,17 +8,20 @@
  * */
 
 #include <opencv2/opencv.hpp>
+#include <boost/circular_buffer.hpp>
 #include <iostream>
 
 
 class VideoStreamer {
 	public: 
-		VideoStreamer();
+		VideoStreamer(): buf{30} {};
 		void startStream(int cameraID, cv::String windowName);
+		void playbackBuffer(cv::String windowName);
 		
 	private:
 		cv::VideoCapture camera;
-		//has a detector
+		//has a circular buffer, assuming 30 fps
+		boost::circular_buffer<cv::Mat> buf;
 };
 
 #endif
