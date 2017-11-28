@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/tudor/devCV/wink/VideoStreamer.cpp" "/home/tudor/devCV/wink/CMakeFiles/wink1.dir/VideoStreamer.cpp.o"
   "/home/tudor/devCV/wink/wink1.cpp" "/home/tudor/devCV/wink/CMakeFiles/wink1.dir/wink1.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

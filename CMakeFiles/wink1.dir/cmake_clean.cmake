@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/wink1.dir/wink1.cpp.o"
+  "CMakeFiles/wink1.dir/VideoStreamer.cpp.o"
   "wink1.pdb"
   "wink1"
 )

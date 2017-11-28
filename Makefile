@@ -123,6 +123,33 @@ wink1/fast:
 	$(MAKE) -f CMakeFiles/wink1.dir/build.make CMakeFiles/wink1.dir/build
 .PHONY : wink1/fast
 
+VideoStreamer.o: VideoStreamer.cpp.o
+
+.PHONY : VideoStreamer.o
+
+# target to build an object file
+VideoStreamer.cpp.o:
+	$(MAKE) -f CMakeFiles/wink1.dir/build.make CMakeFiles/wink1.dir/VideoStreamer.cpp.o
+.PHONY : VideoStreamer.cpp.o
+
+VideoStreamer.i: VideoStreamer.cpp.i
+
+.PHONY : VideoStreamer.i
+
+# target to preprocess a source file
+VideoStreamer.cpp.i:
+	$(MAKE) -f CMakeFiles/wink1.dir/build.make CMakeFiles/wink1.dir/VideoStreamer.cpp.i
+.PHONY : VideoStreamer.cpp.i
+
+VideoStreamer.s: VideoStreamer.cpp.s
+
+.PHONY : VideoStreamer.s
+
+# target to generate assembly for a file
+VideoStreamer.cpp.s:
+	$(MAKE) -f CMakeFiles/wink1.dir/build.make CMakeFiles/wink1.dir/VideoStreamer.cpp.s
+.PHONY : VideoStreamer.cpp.s
+
 wink1.o: wink1.cpp.o
 
 .PHONY : wink1.o
@@ -159,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... wink1"
+	@echo "... VideoStreamer.o"
+	@echo "... VideoStreamer.i"
+	@echo "... VideoStreamer.s"
 	@echo "... wink1.o"
 	@echo "... wink1.i"
 	@echo "... wink1.s"

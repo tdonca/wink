@@ -1,0 +1,6 @@
+1. When do you include class headers?
+
+Header files are used to give access to the class interface specification.
+Include the header when you want to use that class
+
+2. 

@@ -6,11 +6,27 @@
 
 #IncludeRegexTransform: 
 
+/home/tudor/devCV/wink/VideoStreamer.cpp
+opencv2/opencv.hpp
+-
+iostream
+-
+VideoStreamer.h
+/home/tudor/devCV/wink/VideoStreamer.h
+
+/home/tudor/devCV/wink/VideoStreamer.h
+opencv2/opencv.hpp
+-
+iostream
+-
+
 /home/tudor/devCV/wink/wink1.cpp
 opencv2/opencv.hpp
 -
 iostream
 -
+VideoStreamer.h
+/home/tudor/devCV/wink/VideoStreamer.h
 
 /usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h
