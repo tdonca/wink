@@ -13,3 +13,4 @@ to ensure exactly 30fps no matter what.
 	How does it store the raw camera frames?
 	How does it read the camera frames? Sequential? Are any frames lost in between?
 	
+5. Make sure you draw 30 fps AND you read 30fps from the camera...
