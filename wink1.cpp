@@ -6,9 +6,9 @@
 
 int main(int argc, char* argv[]){
 	//create window
-	cv::namedWindow("Wink", cv::WINDOW_AUTOSIZE);
-	cv::resizeWindow("Wink", 500, 400);
-	cv::moveWindow("Wink", 300, 300);
+	cv::namedWindow("Wink", cv::WINDOW_NORMAL);
+	cv::resizeWindow("Wink", 1600, 900);
+	cv::moveWindow("Wink", 100, 300);
 	
 	//create video stream
 	VideoStreamer stream{};

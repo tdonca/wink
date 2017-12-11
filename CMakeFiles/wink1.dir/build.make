@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tudor/devCV/wink
+CMAKE_SOURCE_DIR = /home/tudor/devCV/wink3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tudor/devCV/wink
+CMAKE_BINARY_DIR = /home/tudor/devCV/wink3
 
 # Include any dependencies generated for this target.
 include CMakeFiles/wink1.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/wink1.dir/flags.make
 
 CMakeFiles/wink1.dir/wink1.cpp.o: CMakeFiles/wink1.dir/flags.make
 CMakeFiles/wink1.dir/wink1.cpp.o: wink1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tudor/devCV/wink/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/wink1.dir/wink1.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wink1.dir/wink1.cpp.o -c /home/tudor/devCV/wink/wink1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tudor/devCV/wink3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/wink1.dir/wink1.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wink1.dir/wink1.cpp.o -c /home/tudor/devCV/wink3/wink1.cpp
 
 CMakeFiles/wink1.dir/wink1.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wink1.dir/wink1.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tudor/devCV/wink/wink1.cpp > CMakeFiles/wink1.dir/wink1.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tudor/devCV/wink3/wink1.cpp > CMakeFiles/wink1.dir/wink1.cpp.i
 
 CMakeFiles/wink1.dir/wink1.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wink1.dir/wink1.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tudor/devCV/wink/wink1.cpp -o CMakeFiles/wink1.dir/wink1.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tudor/devCV/wink3/wink1.cpp -o CMakeFiles/wink1.dir/wink1.cpp.s
 
 CMakeFiles/wink1.dir/wink1.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/wink1.dir/wink1.cpp.o.provides.build: CMakeFiles/wink1.dir/wink1.cpp.
 
 CMakeFiles/wink1.dir/VideoStreamer.cpp.o: CMakeFiles/wink1.dir/flags.make
 CMakeFiles/wink1.dir/VideoStreamer.cpp.o: VideoStreamer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tudor/devCV/wink/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/wink1.dir/VideoStreamer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wink1.dir/VideoStreamer.cpp.o -c /home/tudor/devCV/wink/VideoStreamer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tudor/devCV/wink3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/wink1.dir/VideoStreamer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wink1.dir/VideoStreamer.cpp.o -c /home/tudor/devCV/wink3/VideoStreamer.cpp
 
 CMakeFiles/wink1.dir/VideoStreamer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wink1.dir/VideoStreamer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tudor/devCV/wink/VideoStreamer.cpp > CMakeFiles/wink1.dir/VideoStreamer.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tudor/devCV/wink3/VideoStreamer.cpp > CMakeFiles/wink1.dir/VideoStreamer.cpp.i
 
 CMakeFiles/wink1.dir/VideoStreamer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wink1.dir/VideoStreamer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tudor/devCV/wink/VideoStreamer.cpp -o CMakeFiles/wink1.dir/VideoStreamer.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tudor/devCV/wink3/VideoStreamer.cpp -o CMakeFiles/wink1.dir/VideoStreamer.cpp.s
 
 CMakeFiles/wink1.dir/VideoStreamer.cpp.o.requires:
 
@@ -116,25 +116,51 @@ wink1_EXTERNAL_OBJECTS =
 wink1: CMakeFiles/wink1.dir/wink1.cpp.o
 wink1: CMakeFiles/wink1.dir/VideoStreamer.cpp.o
 wink1: CMakeFiles/wink1.dir/build.make
-wink1: /usr/local/lib/libopencv_shape.so.3.2.0
-wink1: /usr/local/lib/libopencv_stitching.so.3.2.0
-wink1: /usr/local/lib/libopencv_superres.so.3.2.0
-wink1: /usr/local/lib/libopencv_videostab.so.3.2.0
-wink1: /usr/local/lib/libopencv_viz.so.3.2.0
-wink1: /usr/local/lib/libopencv_objdetect.so.3.2.0
-wink1: /usr/local/lib/libopencv_calib3d.so.3.2.0
-wink1: /usr/local/lib/libopencv_features2d.so.3.2.0
-wink1: /usr/local/lib/libopencv_flann.so.3.2.0
-wink1: /usr/local/lib/libopencv_highgui.so.3.2.0
-wink1: /usr/local/lib/libopencv_ml.so.3.2.0
-wink1: /usr/local/lib/libopencv_photo.so.3.2.0
-wink1: /usr/local/lib/libopencv_video.so.3.2.0
-wink1: /usr/local/lib/libopencv_videoio.so.3.2.0
-wink1: /usr/local/lib/libopencv_imgcodecs.so.3.2.0
-wink1: /usr/local/lib/libopencv_imgproc.so.3.2.0
-wink1: /usr/local/lib/libopencv_core.so.3.2.0
+wink1: /usr/local/lib/libopencv_viz.a
+wink1: /usr/local/lib/libopencv_videostab.a
+wink1: /usr/local/lib/libopencv_videoio.a
+wink1: /usr/local/lib/libopencv_video.a
+wink1: /usr/local/lib/libopencv_superres.a
+wink1: /usr/local/lib/libopencv_stitching.a
+wink1: /usr/local/lib/libopencv_shape.a
+wink1: /usr/local/lib/libopencv_photo.a
+wink1: /usr/local/lib/libopencv_objdetect.a
+wink1: /usr/local/lib/libopencv_ml.a
+wink1: /usr/local/lib/libopencv_imgproc.a
+wink1: /usr/local/lib/libopencv_imgcodecs.a
+wink1: /usr/local/lib/libopencv_highgui.a
+wink1: /usr/local/lib/libopencv_flann.a
+wink1: /usr/local/lib/libopencv_features2d.a
+wink1: /usr/local/lib/libopencv_core.a
+wink1: /usr/local/lib/libopencv_calib3d.a
+wink1: /usr/local/lib/libopencv_features2d.a
+wink1: /usr/local/lib/libopencv_ml.a
+wink1: /usr/local/lib/libopencv_highgui.a
+wink1: /usr/local/lib/libopencv_videoio.a
+wink1: /usr/local/lib/libopencv_imgcodecs.a
+wink1: /usr/lib/x86_64-linux-gnu/libjpeg.so
+wink1: /usr/lib/x86_64-linux-gnu/libwebp.so
+wink1: /usr/lib/x86_64-linux-gnu/libpng.so
+wink1: /usr/lib/x86_64-linux-gnu/libtiff.so
+wink1: /usr/lib/x86_64-linux-gnu/libjasper.so
+wink1: /usr/lib/x86_64-linux-gnu/libjpeg.so
+wink1: /usr/lib/x86_64-linux-gnu/libwebp.so
+wink1: /usr/lib/x86_64-linux-gnu/libpng.so
+wink1: /usr/lib/x86_64-linux-gnu/libtiff.so
+wink1: /usr/lib/x86_64-linux-gnu/libjasper.so
+wink1: /usr/lib/x86_64-linux-gnu/libImath.so
+wink1: /usr/lib/x86_64-linux-gnu/libIlmImf.so
+wink1: /usr/lib/x86_64-linux-gnu/libIex.so
+wink1: /usr/lib/x86_64-linux-gnu/libHalf.so
+wink1: /usr/lib/x86_64-linux-gnu/libIlmThread.so
+wink1: /usr/local/lib/libopencv_flann.a
+wink1: /usr/local/lib/libopencv_video.a
+wink1: /usr/local/lib/libopencv_imgproc.a
+wink1: /usr/local/lib/libopencv_core.a
+wink1: /usr/lib/x86_64-linux-gnu/libz.so
+wink1: /usr/local/share/OpenCV/3rdparty/lib/libippicv.a
 wink1: CMakeFiles/wink1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tudor/devCV/wink/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable wink1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tudor/devCV/wink3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable wink1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wink1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -152,6 +178,6 @@ CMakeFiles/wink1.dir/clean:
 .PHONY : CMakeFiles/wink1.dir/clean
 
 CMakeFiles/wink1.dir/depend:
-	cd /home/tudor/devCV/wink && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tudor/devCV/wink /home/tudor/devCV/wink /home/tudor/devCV/wink /home/tudor/devCV/wink /home/tudor/devCV/wink/CMakeFiles/wink1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tudor/devCV/wink3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tudor/devCV/wink3 /home/tudor/devCV/wink3 /home/tudor/devCV/wink3 /home/tudor/devCV/wink3 /home/tudor/devCV/wink3/CMakeFiles/wink1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/wink1.dir/depend
 

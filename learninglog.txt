@@ -3,4 +3,14 @@
 Header files are used to give access to the class interface specification.
 Include the header when you want to use that class
 
-2. 
+2. Deal with non-full circular buffer when playback is attempted
+
+3. The current implementation suffers from non-uniform frame playback
+We need to decouple constant frame playback from other processing activities
+to ensure exactly 30fps no matter what.
+
+4. How does OpenCV store the camera object?
+	How does it store the raw camera frames?
+	How does it read the camera frames? Sequential? Are any frames lost in between?
+	
+5. Make sure you draw 30 fps AND you read 30fps from the camera...
