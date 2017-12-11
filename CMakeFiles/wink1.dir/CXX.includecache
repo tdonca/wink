@@ -4230,29 +4230,41 @@ boost/core/enable_if.hpp
 
 /home/tudor/Boost/boost_1_65_1/boost/version.hpp
 
-/home/tudor/devCV/wink/VideoStreamer.cpp
+/home/tudor/devCV/wink3/VideoStreamer.cpp
 opencv2/opencv.hpp
 -
 iostream
 -
+future
+-
+vector
+-
+chrono
+-
 VideoStreamer.h
-/home/tudor/devCV/wink/VideoStreamer.h
+/home/tudor/devCV/wink3/VideoStreamer.h
 
-/home/tudor/devCV/wink/VideoStreamer.h
+/home/tudor/devCV/wink3/VideoStreamer.h
 opencv2/opencv.hpp
+-
+iostream
 -
 boost/circular_buffer.hpp
 -
-iostream
+string
+-
+vector
+-
+future
 -
 
-/home/tudor/devCV/wink/wink1.cpp
+/home/tudor/devCV/wink3/wink1.cpp
 opencv2/opencv.hpp
 -
 iostream
 -
 VideoStreamer.h
-/home/tudor/devCV/wink/VideoStreamer.h
+/home/tudor/devCV/wink3/VideoStreamer.h
 
 /usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h
