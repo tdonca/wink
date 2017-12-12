@@ -18,8 +18,10 @@
 
 class VideoStreamer {
 	public: 
-		VideoStreamer() 
-			:camera{}, 
+		VideoStreamer(int _width, int _height) 
+			:width{_width},
+			 height{_height},
+			 camera{}, 
 			 replay_buf{30}, 
 			 face_classifier{}, 
 			 eye_classifier{},
@@ -38,8 +40,10 @@ class VideoStreamer {
 		};
 		void startStream(int cameraID, cv::String windowName);
 		std::vector<cv::Rect> detectEyes(cv::Mat frame);
+		void playbackBuffer(cv::String windowName);
 		
 	private:
+		int width, height;
 		cv::VideoCapture camera;
 		boost::circular_buffer<cv::Mat> replay_buf;
 		static const std::string face_cascade;

@@ -14,8 +14,8 @@
 
 //pretrained face and eye classifiers
 const std::string VideoStreamer::face_cascade{"data/haarcascade_frontalface_alt2.xml"};
-const std::string VideoStreamer::eye_cascade{"data/haarcascade_eye_tree_eyeglasses.xml"};
-
+//const std::string VideoStreamer::eye_cascade{"data/haarcascade_eye_tree_eyeglasses.xml"};
+const std::string VideoStreamer::eye_cascade{"data/haarcascade_eye.xml"};
 
 /* startStream */
 void VideoStreamer::startStream(int cameraID, cv::String windowName ){
@@ -27,6 +27,12 @@ void VideoStreamer::startStream(int cameraID, cv::String windowName ){
 		return;
 	}
 	std::cout << "Camera " << cameraID << " opened." << std::endl;
+	
+	//prep for playback
+	bool playback = false;
+	int countdown = 20;
+	bool flash = false;
+	
 	
 	//stream frames continuously until a key is pressed
 	cv::Mat frame;
@@ -59,7 +65,7 @@ void VideoStreamer::startStream(int cameraID, cv::String windowName ){
 		
 		//std::cout << "Frame " << frameCounter << std::endl;
 		//check if detection task is done
-		if( frameCounter > 1 && detectorFuture.wait_for(std::chrono::seconds(0)) == std::future_status::ready ){
+		if( frameCounter > 3 && detectorFuture.wait_for(std::chrono::seconds(0)) == std::future_status::ready ){
 			//std::cout << "Future ready\n";
 			std::vector<cv::Rect> eyes = detectorFuture.get();
 			//std::cout << "Was able to get\n";
@@ -69,6 +75,7 @@ void VideoStreamer::startStream(int cameraID, cv::String windowName ){
 									&VideoStreamer::detectEyes, this, frame.clone() );
 			
 			
+			
 			//Detect winking
 			if(eyes.size() >= 2){ //eyes opened
 				winkCounter = 0;
@@ -76,9 +83,16 @@ void VideoStreamer::startStream(int cameraID, cv::String windowName ){
 			else{//possible wink
 				++winkCounter;
 			}
-			if(winkCounter > 1){
-				std::cout << "Wink!" << std::endl;
+			if(winkCounter > 4){
+				std::cout << "Wink detected!" << std::endl;
+				//playback = true;
+				//flash screen
+				cv::rectangle(frame, cv::Point(0,0), cv::Point(width, height), 
+							cv::Scalar(255,255,255), -1);
+				//countdown = 20;
 			}
+			
+			
 			
 			
 			//draw the eye features
@@ -89,6 +103,17 @@ void VideoStreamer::startStream(int cameraID, cv::String windowName ){
 			frameCounter = 0;
 		}
 		
+		
+		//Prepare frames for delayed playback
+		if(playback){
+			--countdown;
+			if(countdown == 0){
+				playback = false;
+				countdown = 20;
+				std::cout << "Playback initiated." << std::endl;
+				playbackBuffer(windowName);
+			}
+		}
 		
 		//display current frame to window
 		cv::imshow(windowName, frame);
@@ -123,13 +148,13 @@ std::vector<cv::Rect> VideoStreamer::detectEyes(cv::Mat frame){
 	
 	//detect any faces in the frame
 	std::vector<cv::Rect> faces;
-	face_classifier.detectMultiScale(procFrame, faces, 1.1, 3, 0|cv::CASCADE_SCALE_IMAGE, cv::Size(50, 50));
+	face_classifier.detectMultiScale(procFrame, faces, 1.1, 3, 0|cv::CASCADE_SCALE_IMAGE, cv::Size(30, 30));
 	for(size_t i = 0; i < faces.size(); ++i){
 		
 		//detect eyes
 		cv::Mat face = procFrame(faces[i]);
 		std::vector<cv::Rect> eyes;
-		eye_classifier.detectMultiScale(face, eyes, 1.1, 5, 0|cv::CASCADE_SCALE_IMAGE, cv::Size(30, 30));
+		eye_classifier.detectMultiScale(face, eyes, 1.1, 3, 0|cv::CASCADE_SCALE_IMAGE, cv::Size(30, 30));
 		
 		
 		//correct eye feature coordinates for drawing
@@ -143,4 +168,20 @@ std::vector<cv::Rect> VideoStreamer::detectEyes(cv::Mat frame){
 	
 	
 	return features;
+}
+
+
+void VideoStreamer::playbackBuffer(cv::String windowName){
+	
+	for(int i = 0; i < replay_buf.size(); i++){
+		if(replay_buf[i].empty()){
+				std::cerr << "No playback frame found." << std::endl;
+				break;
+		}
+		cv::imshow(windowName, replay_buf[i]);
+		if(cvWaitKey(33) > 0){
+			break;
+		}
+	}
+	
 }

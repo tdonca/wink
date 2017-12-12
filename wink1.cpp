@@ -8,10 +8,10 @@ int main(int argc, char* argv[]){
 	//create window
 	cv::namedWindow("Wink", cv::WINDOW_NORMAL);
 	cv::resizeWindow("Wink", 1600, 900);
-	cv::moveWindow("Wink", 100, 300);
+	cv::moveWindow("Wink", 100, 900);
 	
 	//create video stream
-	VideoStreamer stream{};
+	VideoStreamer stream{1600, 900};
 	
 	//start streaming
 	stream.startStream(0, "Wink");
